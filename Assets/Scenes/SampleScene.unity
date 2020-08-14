@@ -2728,6 +2728,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44680968}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &44832904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 44832905}
+  m_Layer: 0
+  m_Name: Empty Camera Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &44832905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44832904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1331564445}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &46016618
 GameObject:
   m_ObjectHideFlags: 0
@@ -9252,7 +9282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &134785442
 Transform:
   m_ObjectHideFlags: 0
@@ -9261,7 +9291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134785441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.148037, y: -1.8881063, z: -27.639446}
+  m_LocalPosition: {x: -24.148037, y: -1.8881063, z: 118.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 808779931}
@@ -88404,6 +88434,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 54285859}
+  - {fileID: 44832905}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88421,7 +88452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceMagnitude: 3
   torqueMagnitude: 0.1
-  targetFramerate: 60
+  targetFramerate: 30
 --- !u!54 &1331564447
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -144293,11 +144324,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 5034193902531023256, guid: cfe687fc9c493134996cccd5fdf83288,
-        type: 3}
-      propertyPath: m_UpdateMethod
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5034193902531023258, guid: cfe687fc9c493134996cccd5fdf83288,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -144352,12 +144378,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1331564445}
+      objectReference: {fileID: 44832905}
     - target: {fileID: 5034193903616391275, guid: cfe687fc9c493134996cccd5fdf83288,
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 1331564445}
+      objectReference: {fileID: 44832905}
     - target: {fileID: 5034193904020687364, guid: cfe687fc9c493134996cccd5fdf83288,
         type: 3}
       propertyPath: m_HorizontalDamping
