@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class ForceControl : MonoBehaviour
@@ -15,14 +16,35 @@ public class ForceControl : MonoBehaviour
     Vector3 inputRot;
     Rigidbody rb;
 
+    InputAction strafeAction, yawAction;
+
     private void Awake() {
         rb = GetComponent<Rigidbody>();
+    }
+
+
+    private void Start() {
+
+        var map = GetComponent<PlayerInput>().actions.FindActionMap("Sphere");
+        yawAction = map.FindAction("Yaw");
+        strafeAction = map.FindAction("Strafe");
     }
 
     // Update is called once per frame
     void Update() {
         CheckTargetFrameRate();
 
+        //ProcessUpdateOld();
+        ProcessInputNew();
+    }
+
+    private void ProcessInputNew() {
+        var strafeVec = strafeAction.ReadValue<Vector2>();
+        inputDir = new Vector3(strafeVec.x, 0, strafeVec.y);
+        inputRot = new Vector3(0, yawAction.ReadValue<float>(), 0);
+    }
+
+    private void ProcessUpdateOld() {
         inputDir = Vector3.zero;
         if (Input.GetKey(KeyCode.W)) {
             inputDir += Vector3.forward;
